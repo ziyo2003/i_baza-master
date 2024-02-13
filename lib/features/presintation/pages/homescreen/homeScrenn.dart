@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../katalog_screen/katalog_page.dart';
 import '../profile/profile.dart';
 import '../profile/profile_main_page.dart';
 
@@ -82,7 +83,7 @@ class _NaviBarState extends State<NaviBar> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const SearchPage(),
+    const CatalogScreen(),
     const NotificationsPage(),
     const CartPage(),
     const ProfileMainScreen(),
@@ -96,12 +97,9 @@ class _NaviBarState extends State<NaviBar> {
 
   @override
   Widget build(BuildContext context) {
-    // Customize theme for BottomNavigationBar
     final bottomNavTheme = Theme.of(context).bottomNavigationBarTheme.copyWith(
-      // Adjust text and icon size within the theme
       selectedIconTheme: const IconThemeData(size: 30),
       unselectedIconTheme: const IconThemeData(size: 30),
-      // Adjust label styles if needed
       selectedLabelStyle: const TextStyle(fontSize: 12),
       unselectedLabelStyle: const TextStyle(fontSize: 12),
     );
