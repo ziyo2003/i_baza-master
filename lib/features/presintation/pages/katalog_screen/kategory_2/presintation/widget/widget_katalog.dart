@@ -6,11 +6,11 @@ import '../../../../../../../assets/widgets/icons.dart';
 import '../../data/katalog_model/model.dart';
 
 
-class CategoryItem extends StatelessWidget {
-  final CategoryModel2 category;
-  const CategoryItem({
+class ProductItem extends StatelessWidget {
+  final ProductModel product;
+  const ProductItem({
     super.key,
-    required this.category,
+    required this.product,
   });
 
   @override
@@ -34,7 +34,7 @@ class CategoryItem extends StatelessWidget {
             Stack(
               children: [
                 Image.asset(
-                  category.img
+                  product.img
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -97,11 +97,11 @@ class CategoryItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    category.name,style: Theme.of(context).textTheme.labelLarge,
+                    product.name,style: Theme.of(context).textTheme.labelLarge,
                   ),
                   const Gap(2),
                   Text(
-                    category.title,style: Theme.of(context)
+                    product.title,style: Theme.of(context)
                       .textTheme
                       .labelLarge!
                       .copyWith(
@@ -110,13 +110,13 @@ class CategoryItem extends StatelessWidget {
                   ),
                   const Gap(2),
                   Text(
-                    category.in_price,
+                    product.in_price,
                     style: TextStyle(fontSize: 12,color: Colors.red),
 
                   ),
                   const Gap(2),
                   Text(
-                    category.price,
+                    product.price,
                     style: TextStyle(fontSize: 16),
                   ),
                   const Gap(1),
@@ -160,30 +160,6 @@ class CategoryItem extends StatelessWidget {
           ],
         ),
       ),
-      // Container(
-      //   width: 106,height: 106,
-      //   padding: const EdgeInsets.only(top: 8,left: 10),
-      //   decoration: BoxDecoration(
-      //     borderRadius: BorderRadius.circular(16),
-      //     color: const Color(0xFFF7F7F7),
-      //   ),
-      //   child: Column(
-      //     crossAxisAlignment: CrossAxisAlignment.start,
-      //     children: [
-      //       Text(category.name,style: const TextStyle(color: Colors.black,fontSize: 12),),
-      //       const Spacer(),
-      //       Row(
-      //           mainAxisAlignment: MainAxisAlignment.end,
-      //           children: [
-      //             ClipRRect(
-      //                 borderRadius: BorderRadius.circular(20),
-      //                 child: Image.asset(category.img,width: 70,height: 70,))
-      //           ]
-      //       ),
-      //     ],
-      //   ),
-      // ),
-
     );
   }
 }

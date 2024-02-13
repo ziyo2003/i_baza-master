@@ -1,54 +1,54 @@
 part of 'katalog_bloc.dart';
 
 
-class CategoryState {
+class ProductState {
   final LoadingStatus status;
-  final List<CategoryModel2> categoryList;
-  final List<CategoryModel2> searchedCategory;
+  final List<ProductModel> productList;
+  final List<ProductModel> searchProduct;
   final bool isSearching;
-  CategoryState({
+  ProductState({
     required this.status,
-    required this.categoryList,
-    required this.searchedCategory,
+    required this.productList,
+    required this.searchProduct,
     required this.isSearching,
   });
 
 
-  CategoryState copyWith({
+  ProductState copyWith({
     LoadingStatus? status,
-    List<CategoryModel2>? categoryList,
-    List<CategoryModel2>? searchedCategory,
+    List<ProductModel>? categoryList,
+    List<ProductModel>? searchedCategory,
     bool? isSearching,
   }) {
-    return CategoryState(
+    return ProductState(
       status: status ?? this.status,
-      categoryList: categoryList ?? this.categoryList,
-      searchedCategory: searchedCategory ?? this.searchedCategory,
+      productList: categoryList ?? this.productList,
+      searchProduct: searchedCategory ?? this.searchProduct,
       isSearching: isSearching ?? this.isSearching,
     );
   }
 
   @override
   String toString() {
-    return 'CategoryState(status: $status, categoryList: $categoryList, isSearching: $isSearching,searchedCategory: $searchedCategory)';
+    return 'ProductState(status: $status, categoryList: $productList, isSearching: $isSearching,searchedCategory: $searchProduct)';
   }
 
   @override
-  bool operator ==(covariant CategoryState other) {
+  bool operator ==(covariant ProductState other) {
     if (identical(this, other)) return true;
 
     return
       other.status == status &&
-          listEquals(other.categoryList, categoryList) &&
-          listEquals(other.searchedCategory, searchedCategory) &&
+          listEquals(other.productList, productList) &&
+          listEquals(other.searchProduct, searchProduct) &&
           other.isSearching == isSearching;
   }
 
   @override
   int get hashCode {
     return status.hashCode ^
-    categoryList.hashCode ^
-    searchedCategory.hashCode ^
+    productList.hashCode ^
+    searchProduct.hashCode ^
     isSearching.hashCode;
   }
 }

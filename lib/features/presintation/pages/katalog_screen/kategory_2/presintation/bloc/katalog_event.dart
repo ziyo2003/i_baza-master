@@ -1,12 +1,12 @@
 part of 'katalog_bloc.dart';
 
-sealed class CategoryEvent {}
+sealed class ProductEvent {}
 
 
-class LoadingCategory extends CategoryEvent {}
+class LoadingProduct extends ProductEvent {}
 
 
-class Searching extends CategoryEvent {
+class Searching extends ProductEvent {
   final String query;
 
   Searching({required this.query});

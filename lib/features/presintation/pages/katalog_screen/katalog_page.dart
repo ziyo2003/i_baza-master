@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-
+import 'package:i_baza/features/presintation/pages/katalog_screen/kategory_2/presintation/bloc/katalog_bloc.dart';
+import 'package:i_baza/features/presintation/pages/katalog_screen/kategory_2/presintation/widget/widget_katalog.dart';
 import '../../../../assets/colors/color.dart';
 import '../../../../assets/widgets/icons.dart';
-import '../../../../assets/widgets/images.dart';
 import 'appbar_katalog/appbar.dart';
 import 'category/data/model/status.dart';
 import 'category/presentation/bloc/category_bloc.dart';
@@ -77,8 +77,6 @@ class CatalogScreen extends StatelessWidget {
                 },
               ),
             ),
-
-
             Text(
               'Ushbu takliflarga e’tibor qarating',
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -87,6 +85,62 @@ class CatalogScreen extends StatelessWidget {
               ),
             ),
             const Gap(20),
+            Container(height: 1030,
+              child: BlocBuilder<ProductBloc, ProductState>(
+                builder: (context, state) {
+                  switch (state.status) {
+                    case LoadingStatus.pure:
+                      context.read<ProductBloc>().add(LoadingProduct());
+                      return const SizedBox();
+                    case LoadingStatus.loading:
+                      return const CupertinoActivityIndicator();
+                    case LoadingStatus.loadedWithSuccess:
+                      return state.isSearching
+                          ? GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                          childAspectRatio: 1,
+                        ),
+                        itemCount: state.searchProduct.length,
+                        itemBuilder: (context, index) {
+                          return ProductItem(
+                            product: state.searchProduct[index],
+                          );
+                        },
+                      )
+                          : GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 0.6,
+                        ),
+                        itemCount: state.productList.length,
+                        itemBuilder: (context, index) {
+                          return ProductItem(
+                            product: state.productList[index],
+                          );
+                        },
+                      );
+                    case LoadingStatus.loadedWithFailure:
+                      return Container(
+                        color: Colors.blueAccent,
+                        width: 300,
+                        height: 300,
+                      );
+                    default:
+                      return Container(
+                        color: Colors.red,
+                        width: 300,
+                        height: 300,
+                      );
+                  }
+                },
+              ),
+            ),
+
 
             const Gap(20),
             Container(
