@@ -65,7 +65,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
                       autofocus: true,
                     ),
                   ),
-                  Gap(20),
+                  Gap(10),
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
@@ -106,12 +106,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
                   child: Row(children: [
                     SvgPicture.asset(AppIcons.dot),
                     Gap(12),
-                    Text(
-                      "Perforator",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .copyWith(color: textBlack),
+                    Text("Perforator", style: Theme.of(context).textTheme.labelLarge!.copyWith(color: textBlack),
                     )
                   ]),
                 ),
@@ -226,10 +221,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
                 Gap(8),
                 Text(
                   "Perforator",
-                  style: Theme.of(context)
-                      .textTheme
-                      .displaySmall!
-                      .copyWith(color: textBlack),
+                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -242,10 +234,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
                 const Gap(8),
                 Text(
                   "Kaska",
-                  style: Theme.of(context)
-                      .textTheme
-                      .displaySmall!
-                      .copyWith(color: textBlack),
+                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -258,10 +247,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
                 Gap(8),
                 Text(
                   "Maxsus kiyim",
-                  style: Theme.of(context)
-                      .textTheme
-                      .displaySmall!
-                      .copyWith(color: textBlack),
+                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),
                 ),
               ],
             ),
