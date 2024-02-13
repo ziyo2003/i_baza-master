@@ -1,6 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../katalog_screen/category/data/model/status.dart';
+import '../katalog_screen/category/presentation/bloc/category_bloc.dart';
+import '../katalog_screen/category/presentation/widgets/category_item.dart';
 import '../katalog_screen/katalog_page.dart';
 import '../profile/profile.dart';
 import '../profile/profile_main_page.dart';
@@ -43,9 +48,9 @@ class NotificationsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Notifications Page'),
-    );
+    return Scaffold(
+        body: Text('not completedd')
+      );
   }
 }
 

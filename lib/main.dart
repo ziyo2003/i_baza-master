@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:i_baza/core/adaptor/hive_type_adaptor.dart';
 import 'package:i_baza/core/data_base/objectBox.dart';
+import 'package:i_baza/features/presintation/pages/katalog_screen/category/data/repository/category.dart';
+import 'package:i_baza/features/presintation/pages/katalog_screen/category/presentation/bloc/category_bloc.dart';
 import 'package:i_baza/features/presintation/pages/login_screen/login_screen.dart';
 import 'package:i_baza/features/presintation/pages/profile/profile.dart';
 import 'core/injector/setup_locator/setup_locator.dart';
@@ -37,10 +40,15 @@ class _MainAppState extends State<MainApp> {
 
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+  Widget build(BuildContext context) => MultiBlocProvider(
+    providers: [
+      BlocProvider(
+          create: (context) => CategoryBloc(response: CategoryRepository())),
+    ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: LoginScreen(),
+      ),
     );
-  }
+
 }
