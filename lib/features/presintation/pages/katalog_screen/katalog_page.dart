@@ -15,7 +15,6 @@ import 'category/presentation/widgets/category_item.dart';
 
 class CatalogScreen extends StatelessWidget {
   const CatalogScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,4 +118,5 @@ class CatalogScreen extends StatelessWidget {
     );
   }
 }
+
 
