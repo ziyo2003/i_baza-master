@@ -1,5 +1,5 @@
-var categoryData = <String, dynamic>{
-  "category": [
+var productData = <String, dynamic>{
+  "product": [
     {
       "id": 1,
       "img": "assets/images/rotban.png",

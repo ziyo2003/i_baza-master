@@ -1,13 +1,13 @@
 
 
-class CategoryModel2 {
+class ProductModel {
   final int id;
   final String img;
   final String name;
   final String title;
   final String in_price;
   final String price;
-  CategoryModel2({
+  ProductModel({
     required this.name,
     required this.title,
     required this.in_price,
@@ -17,8 +17,8 @@ class CategoryModel2 {
     required this.img,
   });
 
-  factory CategoryModel2.fromJson(Map<String, dynamic> json) {
-    return CategoryModel2(
+  factory ProductModel.fromJson(Map<String, dynamic> json) {
+    return ProductModel(
       id: json['id'],
       img: json['img'],
       name: json['name'],
@@ -33,7 +33,7 @@ class CategoryModel2 {
     return 'CategoryModel{id: $id, img: $img, name: $name , title: $title , in_price: $in_price, price: $price}';
   }
   @override
-  bool operator ==(covariant CategoryModel2 other) {
+  bool operator ==(covariant ProductModel other) {
     if (identical(this, other)) return true;
 
     return other.id == id &&
@@ -50,7 +50,7 @@ class CategoryModel2 {
     price.hashCode;
   }
 
-  CategoryModel2 copyWith({
+  ProductModel copyWith({
     int? id,
     String? img,
     String? name,
@@ -58,7 +58,7 @@ class CategoryModel2 {
     String? in_price,
     String? price,
   }) {
-    return CategoryModel2(
+    return ProductModel(
       id: id ?? this.id,
       img: img ?? this.img,
       name: name ?? this.name,

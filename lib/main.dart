@@ -9,6 +9,8 @@ import 'package:i_baza/features/presintation/pages/login_screen/login_screen.dar
 import 'package:i_baza/features/presintation/pages/profile/profile.dart';
 import 'core/injector/setup_locator/setup_locator.dart';
 import 'core/injector/stage_repository/storage_repository.dart';
+import 'features/presintation/pages/katalog_screen/kategory_2/data/repository/repository.dart';
+import 'features/presintation/pages/katalog_screen/kategory_2/presintation/bloc/katalog_bloc.dart';
 
 void main() async {
   registerAdapters();
@@ -44,6 +46,8 @@ class _MainAppState extends State<MainApp> {
     providers: [
       BlocProvider(
           create: (context) => CategoryBloc(response: CategoryRepository())),
+      BlocProvider(
+          create: (context) => ProductBloc(response: ProductRepository())),
     ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

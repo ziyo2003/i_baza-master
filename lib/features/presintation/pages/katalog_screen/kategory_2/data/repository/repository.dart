@@ -3,15 +3,15 @@
 import '../data_source/katalog_mock_data.dart';
 import '../katalog_model/model.dart';
 
-class CategoryRepository {
-  Future<List<CategoryModel2>> getCategory()async {
+class ProductRepository {
+  Future<List<ProductModel>> getCategory()async {
     Future.delayed(const Duration(seconds: 3));
 
-    return (categoryData['category']as List).map((e) => CategoryModel2.fromJson(e)).toList();
+    return (productData['product']as List).map((e) => ProductModel.fromJson(e)).toList();
 
   }
 
-  Future<CategoryModel2> createCategory({
+  Future<ProductModel> createCategory({
     required String img,
     required String name,
     required String title,
@@ -24,8 +24,8 @@ class CategoryRepository {
     if (name.isEmpty || name.length < 3) {
       throw Exception('Type is invalid');
     }
-    final newCategory = CategoryModel2(
-      id: (categoryData['category'] as List).lastOrNull['id'] + 1 ?? 0,
+    final newProduct = ProductModel(
+      id: (productData['product'] as List).lastOrNull['id'] + 1 ?? 0,
       name: '',
       img: img,
       title: '',
@@ -34,19 +34,19 @@ class CategoryRepository {
 
     );
 
-    categoryData['category'].add(
+    productData['product'].add(
       {
-        "id": newCategory.id,
-        "img": newCategory.img,
-        "name": newCategory.name,
-        "title": newCategory.title,
-        "in_price": newCategory.in_price,
-        "price": newCategory.price,
+        "id": newProduct.id,
+        "img": newProduct.img,
+        "name": newProduct.name,
+        "title": newProduct.title,
+        "in_price": newProduct.in_price,
+        "price": newProduct.price,
       },
 
     );
 
-    return newCategory;
+    return newProduct;
   }
 
 
