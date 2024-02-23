@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:i_baza/features/presintation/pages/homescreen/widgets/tab_item.dart';
 
-import '../katalog_screen/category/data/model/status.dart';
-import '../katalog_screen/category/presentation/bloc/category_bloc.dart';
-import '../katalog_screen/category/presentation/widgets/category_item.dart';
+import '../../../../assets/widgets/icons.dart';
 import '../katalog_screen/katalog_page.dart';
 import '../profile/profile.dart';
 import '../profile/profile_main_page.dart';
@@ -94,11 +92,7 @@ class _NaviBarState extends State<NaviBar> {
     const ProfileMainScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -114,52 +108,71 @@ class _NaviBarState extends State<NaviBar> {
         index: _selectedIndex,
         children: _pages,
       ),
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          bottomNavigationBarTheme: bottomNavTheme,
-        ),
-        child: BottomNavigationBar(
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6), // Add padding around icons
-                child: SvgPicture.asset('assets/icons/svg/Home.svg', width: 24),
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6), // Add padding around icons
-                child: SvgPicture.asset('assets/icons/svg/Menu.svg', width: 24),
-              ),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6), // Add padding around icons
-                child: SvgPicture.asset('assets/icons/svg/bag.svg', width: 24),
-              ),
-              label: 'Notifications',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20), // Add padding around icons
-                child: SvgPicture.asset('assets/icons/svg/Buy.svg', width: 24),
-              ),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6), // Add padding around icons
-                child: SvgPicture.asset('assets/icons/svg/User.svg', width: 24),
-              ),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.black,
-          onTap: _onItemTapped,
-        ),
+      bottomNavigationBar:SizedBox(
+          width: double.maxFinite,
+          height: 60 + MediaQuery.of(context).padding.bottom,
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children:
+              [
+
+                TapBarItem(
+                    selected: _selectedIndex == 0,
+                    icon: AppIcons.main,
+                    title: "Asosiy",
+                    onTap: (){
+                      _selectedIndex = 0;
+                      setState(() {
+
+                      });
+                    }
+                ),
+                TapBarItem(
+                    selected:_selectedIndex == 1,
+                    icon: AppIcons.catalog,
+                    title: "Katalog",
+                    onTap: (){
+                      _selectedIndex = 1;
+                      setState(() {
+
+                      });
+                    }
+                ),
+                TapBarItem(
+                    selected: _selectedIndex == 2,
+                    icon: AppIcons.orders,
+                    title: "Buyurtmalar",
+                    onTap: (){
+                      _selectedIndex = 2;
+                      setState(() {
+
+                      });
+                    }
+                ),
+                TapBarItem(
+                    selected: _selectedIndex == 3,
+                    icon: AppIcons.bin,
+                    title: "Savatcha",
+                    onTap: (){
+                      _selectedIndex = 3;
+                      setState(() {
+
+                      });
+                    }
+                ),
+                TapBarItem(
+                    selected: _selectedIndex == 4,
+                    icon: AppIcons.profile,
+                    title: "Profil",
+                    onTap: (){
+                      _selectedIndex = 4;
+                      setState(() {
+
+                      });
+                    }
+                ),
+              ]
+          )
       ),
     );
   }

@@ -175,6 +175,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
             ElevatedButton(
               onPressed: () {
                 _saveProfileData();
+                Navigator.pop(context);
               },
               child: Text('Saqlash',style: TextStyle(color: Colors.black)),
               style: ElevatedButton.styleFrom(

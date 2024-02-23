@@ -1,3 +1,5 @@
+const _ab = 'assets/icon/navbar/';
+const _as = 'assets/icons/';
 class AppIcons {
   static const logo = "assets/icon/login/logo.svg";
   static const changeNumber = "assets/icon/login/change_number.svg";
@@ -18,14 +20,38 @@ class AppIcons {
   static const search = "assets/icon/appBar/search.svg";
 
 
-//____________________bottom item_____________________________
-  static const asosiy = "assets/icon/bottom_bar/asosiy.svg";
-  static const katalog = "assets/icon/bottom_bar/katalog.svg";
-  static const profile = "assets/icon/bottom_bar/profile.svg";
-  static const savat = "assets/icon/bottom_bar/savat.svg";
-  static const zakaz = "assets/icon/bottom_bar/zakaz.svg";
-  //___________________________________________________________
+//____________________ navbar item_____________________________
+  static const main = '${_ab}main.svg';
+  static const catalog = '${_ab}category.svg';
+  static const orders = '${_ab}orders.svg';
+  static const bin = '${_ab}bin.svg';
+  static const profile = '${_ab}profile.svg';
 
+
+  static const mainLogo = '${_as}main_logo.svg';
+
+  static const arrowEnd = '${_as}arrowEnd.svg';
+  static const arrowBack = '${_as}arrowBack.svg';
+  static const arrowRight2 = "${_as}arrowRight2.svg";
+
+  static const flagUZB = '${_as}flagUzb.svg';
+
+  static const pen = '${_as}pen.svg';
+  static const eyeOff = '${_as}eyeOff.svg';
+  static const eyeOn = '${_as}eyeOn.svg';
+
+  static const editPen = '${_as}editPen.svg';
+  static const editPenBg = '${_as}editPenWithBg.svg';
+  static const exit = '${_as}exit.svg';
+
+  static const bell = '${_as}bell.svg';
+  static const settings = '${_as}settings.svg';
+
+  static const sNotes = '${_as}sNotes.svg';
+  static const sIB = '${_as}sIB.svg';
+  static const sAbout = '${_as}sAbout.svg';
+  static const sStar = '${_as}sStar.svg';
+  static const sCall = '${_as}sCall.svg';
 
 
 
