@@ -1,7 +1,9 @@
 import 'dart:io';
+import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:i_baza/features/data/model/auth_user.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HiveRepository {
   HiveRepository._();
@@ -32,4 +34,11 @@ class HiveRepository {
   static getName() {
     return _hive?.get("is_hive", defaultValue: "error");
   }
+}
+
+final serviceLocator = GetIt.I;
+
+Future<void> setupLocator() async {
+  serviceLocator.registerSingletonAsync(
+          () async => await SharedPreferences.getInstance());
 }

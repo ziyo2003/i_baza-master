@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:i_baza/core/adaptor/hive_type_adaptor.dart';
 import 'package:i_baza/core/data_base/objectBox.dart';
+import 'package:i_baza/core/pages/spalsh_screen.dart';
 import 'package:i_baza/features/presintation/pages/katalog_screen/category/data/repository/category.dart';
 import 'package:i_baza/features/presintation/pages/katalog_screen/category/presentation/bloc/category_bloc.dart';
 import 'package:i_baza/features/presintation/pages/login_screen/login_screen.dart';
@@ -51,7 +52,7 @@ class _MainAppState extends State<MainApp> {
     ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
+        home: SplashScreen(),
       ),
     );
 
